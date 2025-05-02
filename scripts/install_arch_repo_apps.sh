@@ -222,7 +222,6 @@ fi
 
     # Print success message after installation
     echo -e "\n${GREEN}Successfully installed all of Alex Wang's Arch Linux chosen applications!${NC}"
-fi
 else
     echo -e "\n${YELLOW}Skipping installation of Alex Wang's chosen Arch Repo Linux applications.${NC}"
 fi

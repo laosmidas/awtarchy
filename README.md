@@ -1,8 +1,8 @@
 # `arch dilla.hypr.files`
 
-![overview](https://github.com/laosmidas/arch-hypr-dots/raw/main/previews/overview.png)
+**Click the image below to see more previews!**
 
-[See more previews](https://github.com/laosmidas/arch-hypr-dots/tree/main/previews.md)
+[![overview](https://github.com/laosmidas/arch-hypr-dots/raw/main/previews/overview.png)](https://github.com/laosmidas/arch-hypr-dots/tree/main/previews.md)
 
 ## 🚀 Quick Start
 

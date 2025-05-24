@@ -1,6 +1,7 @@
 # `arch dilla.hypr.files`
 
-[Preview Images](https://github.com/laosmidas/arch-hypr-dots/tree/main/previews.md)
+![preview](https://github.com/laosmidas/arch-hypr-dots/tree/main/previews/overview.png)
+[See More](https://github.com/laosmidas/arch-hypr-dots/tree/main/previews.md)
 
 ## 🚀 Quick Start
 

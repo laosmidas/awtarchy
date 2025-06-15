@@ -10,14 +10,14 @@
 pacman -Syyu
 ```
 
-### Installation:
+### Installation (after `archinstall`):
 ```bash
 git clone https://github.com/laosmidas/arch-hypr-dots
 cd arch-hypr-dots
 chmod +x setup_installer.sh
 sudo ./setup_installer.sh
 ```
-> ⚠️ Always review scripts from the internet before executing them.
+> ⚠️ Caution: Always review scripts from the internet before running them.
 
 ## 🖥️ System Overview
 

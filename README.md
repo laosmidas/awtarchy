@@ -5,6 +5,10 @@
 [![overview](https://github.com/laosmidas/arch-hypr-dots/raw/main/previews/overview.png)](https://github.com/laosmidas/arch-hypr-dots/tree/main/previews.md)
 
 ## 🚀 Quick Start
+ℹ️ Note: Before running `archinstall`, update the package database to ensure you're using the latest version:
+```bash
+pacman -Syyu
+```
 
 ### Installation:
 ```bash
@@ -13,7 +17,7 @@ cd arch-hypr-dots
 chmod +x setup_installer.sh
 sudo ./setup_installer.sh
 ```
-> ℹ️ Always review scripts from the internet before executing them.
+> ⚠️ Always review scripts from the internet before executing them.
 
 ## 🖥️ System Overview
 

@@ -128,8 +128,5 @@ sudo ./setup_installer.sh
 ## 📦 Optional Packages
 - [Optional Packages link](extra_notes/optional_packages.md)
 
-## 📜 License
-All code and notes are unlicensed - use freely!  
-[See UNLICENSED file](https://github.com/laosmidas/arch-hypr-dots/blob/main/UNLICENSED)
 
 

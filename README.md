@@ -7,7 +7,7 @@ It **expects TTY login and shell interaction** as the primary workflow and assum
 
 **Click the image below to see more previews!**
 
-[![overview](https://github.com/laosmidas/arch-hypr-dots/raw/main/previews/overview.png)](https://github.com/laosmidas/arch-hypr-dots/tree/main/previews.md)
+[![overview](https://github.com/laosmidas/autarchy/raw/main/previews/overview.png)](https://github.com/laosmidas/autarchy/tree/main/previews.md)
 
 ## 🚀 Quick Start
 ℹ️ Note: Before running `archinstall`, update the package database to ensure you're using the latest version:
@@ -34,7 +34,7 @@ sudo ./setup_installer.sh
 | **Repositories**   | core, extra, multilib, [AUR](https://aur.archlinux.org/), [Flathub](https://flathub.org/) |
 | **Terminal**       | [Alacritty](https://github.com/alacritty/alacritty) |
 | **Bootloader**     | [systemd-boot](https://man.archlinux.org/man/systemd-boot.7) |
-| **Window Manager** | [Hyprland](https://github.com/hyprwm/Hyprland) ([config](https://github.com/laosmidas/arch-hypr-dots/tree/main/config/hypr)) |
+| **Window Manager** | [Hyprland](https://github.com/hyprwm/Hyprland) ([config](https://github.com/laosmidas/autarchy/tree/main/config/hypr)) |
 | **Kernel**         | [linux-tkg](https://github.com/Frogging-Family/linux-tkg) with BORE scheduler |
 
 ## 🎨 Wallpaper Collections
@@ -138,5 +138,6 @@ sudo ./setup_installer.sh
 
 ## 📦 Optional Packages
 - [Optional Packages link](extra_notes/optional_packages.md)
+
 
 

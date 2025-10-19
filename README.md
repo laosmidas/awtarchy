@@ -1,6 +1,6 @@
-# `autarchy-shell`
+# `awtarchy-shell`
 
-**autarchy** is a self-governed Arch-based environment for users who work directly from the terminal.
+**awtarchy** is a self-governed Arch-based environment for users who work directly from the terminal.
 
 It **expects TTY login and shell interaction** as the primary workflow and assumes familiarity with the command line and manual configuration.
 
@@ -8,7 +8,7 @@ It **expects TTY login and shell interaction** as the primary workflow and assum
 
 **Click the image below to see more previews!**
 
-[![overview](https://github.com/laosmidas/autarchy/raw/main/previews/overview.png)](https://github.com/laosmidas/autarchy/tree/main/previews.md)
+[![overview](https://github.com/laosmidas/awtarchy/raw/main/previews/overview.png)](https://github.com/laosmidas/awtarchy/tree/main/previews.md)
 
 ## 🚀 Quick Start
 ℹ️ Note: Before running `archinstall`, update the package database to ensure you're using the latest version:
@@ -18,8 +18,8 @@ pacman -Syyu
 
 ### Installation (after `archinstall`):
 ```bash
-git clone https://github.com/laosmidas/autarchy
-cd autarchy
+git clone https://github.com/laosmidas/awtarchy
+cd awtarchy
 chmod +x install.sh
 sudo ./install.sh
 ```
@@ -35,7 +35,7 @@ sudo ./install.sh
 | **Repositories**   | core, extra, multilib, [AUR](https://aur.archlinux.org/), [Flathub](https://flathub.org/) |
 | **Terminal**       | [Alacritty](https://github.com/alacritty/alacritty) |
 | **Bootloader**     | [systemd-boot](https://man.archlinux.org/man/systemd-boot.7) |
-| **Window Manager** | [Hyprland](https://github.com/hyprwm/Hyprland) ([config](https://github.com/laosmidas/autarchy/tree/main/config/hypr)) |
+| **Window Manager** | [Hyprland](https://github.com/hyprwm/Hyprland) ([config](https://github.com/laosmidas/awtarchy/tree/main/config/hypr)) |
 | **Kernel**         | [linux-tkg](https://github.com/Frogging-Family/linux-tkg) |
 
 ## 🎨 Wallpaper Collections

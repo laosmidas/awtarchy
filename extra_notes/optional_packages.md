@@ -1,4 +1,4 @@
-Notes From Repo: https://github.com/laosmidas/ahtarchy
+Notes From Repo: https://github.com/laosmidas/awtarchy
 
 # manual_install.md
 

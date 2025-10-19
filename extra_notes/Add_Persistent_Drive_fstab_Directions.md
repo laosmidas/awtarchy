@@ -1,4 +1,4 @@
-Notes From Repo: https://github.com/laosmidas/arch-hypr-dots
+Notes From Repo: https://github.com/laosmidas/ahtarchy
 
 # list drives.
 

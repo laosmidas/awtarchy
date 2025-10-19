@@ -1,4 +1,4 @@
-notes from repo: https://github.com/laosmidas/arch-hypr-dots
+notes from repo: https://github.com/laosmidas/ahtarchy
 
 # install ungoogled-chromium (pick your poison) 
 ## flathub

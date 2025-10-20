@@ -26,6 +26,11 @@ awtarchy targets users who prefer TTY login and direct shell interaction. It ass
 [![overview](https://github.com/laosmidas/awtarchy/raw/main/previews/overview.png)](https://github.com/laosmidas/awtarchy/tree/main/previews.md)
 
 ## 🚀 Quick Start
+
+**Boot Arch Linux ISO**  
+Download the latest ISO: [archlinux.org/download](https://archlinux.org/download/)  
+I recommend **[Ventoy](https://www.ventoy.net/en/index.html)** for USB booting — it supports multiple ISOs and never needs re-flashing.
+
 ℹ️ **Note:** Before running `archinstall`, update the package database to ensure you're using the latest version:
 ```bash
 pacman -Syyu

@@ -4,6 +4,9 @@ Notes From Repo: https://github.com/laosmidas/awtarchy
 
 ## 🧰 Optional Utilities Collection
 
+### Mouse Acceleration (raw accel alternative)
+https://www.maccel.org/
+
 ### 📁 File Management
 #### TUI File Manager Suite
 Modern terminal-based file management with image previews:

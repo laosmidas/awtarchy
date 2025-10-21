@@ -1,4 +1,4 @@
-notes from repo: https://github.com/laosmidas/ahtarchy
+notes from repo: https://github.com/laosmidas/awtarchy
 
 # install ungoogled-chromium (pick your poison) 
 ## flathub

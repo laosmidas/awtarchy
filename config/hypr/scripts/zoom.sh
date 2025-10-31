@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # github.com/laosmidas/awtarchy/tree/main/config/hypr/scripts
 # ~/.config/hypr/scripts/zoom.sh
-
+# 
 # Hyprland zoom helper with easy customization
 
 set -euo pipefail

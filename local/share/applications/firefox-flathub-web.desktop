@@ -1,11 +1,11 @@
 # github.com/laosmidas/awtarchy/tree/main/local/share/applications
-# ~/.local/share/applications/librewolf-flathub-web.desktop
+# ~/.local/share/applications/firefox-flathub-web.desktop
 
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Flathub (Librewolf)
-Exec=/usr/bin/librewolf https://flathub.org/
-Icon=librewolf
+Name=Flathub (Firefox)
+Exec=/usr/bin/firefox https://flathub.org/
+Icon=firefox
 Terminal=false
 Categories=Network;WebBrowser;

@@ -1,0 +1,11 @@
+# github.com/laosmidas/awtarchy/tree/main/local/share/applications
+# ~/.local/share/applications/firefox-AUR-packages.desktop
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=AUR (Firefox)
+Exec=/usr/bin/firefox https://aur.archlinux.org/packages
+Icon=firefox
+Terminal=false
+Categories=Network;WebBrowser;

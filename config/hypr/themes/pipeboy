@@ -1,0 +1,127 @@
+#!/usr/bin/env bash
+# github.com/laosmidas/awtarchy/tree/main/config/hypr/themes
+# ~/.config/hypr/themes/pipboy.sh
+
+# pip-boy green
+
+set -euo pipefail
+
+###########   THEME COLORS   ###########
+# Hyprland
+NEW_ACTIVE_BORDER="a4ff47ff"
+NEW_INACTIVE_BORDER="325c32ff"
+
+# Waybar
+W_COLOR="#a4ff47"
+W_BG="#050805"
+W_HOVER="#182618"
+W_FOCUS_BG="#1b281b"
+W_ACTIVE_BG="#101810"
+W_ACTIVE_COLOR="#a4ff47"
+W_URGENT_BG="#263826"
+W_URGENT_COLOR="#050805"
+W_MODE_BG="#101810"
+W_MODE_COLOR="#a4ff47"
+W_CUSTOM_HOVER_BG="#1f301f"
+W_BATT_CHARGING_BG="#a4ff47"
+W_BATT_CHARGING_COLOR="#050805"
+W_BATT_CRITICAL_BG="#3c1b1b"
+W_FOCUS="#1b281b"
+W_MUTED="#2a3d2a"
+
+# Wlogout
+WL_COLOR="#a4ff47"
+WL_BG="rgba(5, 8, 5, 0.90)"
+WL_BTN_COLOR="#a4ff47"
+WL_BTN_BG="rgba(10, 16, 10, 0.92)"
+WL_BTN_HOVER_BG="rgba(18, 28, 18, 0.95)"
+WL_BTN_FOCUS_BG="rgba(22, 34, 22, 0.97)"
+
+# Wofi
+WO_BORDER="2px solid #a4ff47"
+WO_BG="#050805"
+WO_INPUT_COLOR="#a4ff47"
+WO_OUTER_BORDER="1px solid #1b281b"
+WO_OUTER_BG="#050805"
+WO_TEXT_UNSEL="#5c8a4a"
+
+# Mako
+MKO_BG="#050805"
+MKO_TEXT="#a4ff47"
+MKO_BORDER="#a4ff47"
+MKO_PROG="#a4ff47"
+
+###########   FILE PATHS   ###########
+HYPR_CONF="$HOME/.config/hypr/hyprland.conf"
+WAYBAR_CSS="$HOME/.config/waybar/style.css"
+WLOGOUT_CSS="$HOME/.config/wlogout/style.css"
+WOFI_CSS="$HOME/.config/wofi/style.css"
+MAKO_CONF="$HOME/.config/mako/config"
+MICRO_SETTINGS="$HOME/.config/micro/settings.json"
+ALACRITTY_CONF="$HOME/.config/alacritty/alacritty.toml"
+SPEEDCRUNCH_INI="$HOME/.config/SpeedCrunch/SpeedCrunch.ini"
+
+###########   APPLY CHANGES   ###########
+echo "🔄 Applying theme..."
+
+# 1) Hyprland
+sed -i \
+    -e "s/^ *col\.active_border *= *.*/col.active_border = rgba(${NEW_ACTIVE_BORDER})/"  \
+    -e "s/^ *col\.inactive_border *= *.*/col.inactive_border = rgba(${NEW_INACTIVE_BORDER})/" \
+    "$HYPR_CONF"
+
+# 2) Waybar
+sed -i \
+  -e "2s|.*|@define-color bg-default ${W_BG};|" \
+  -e "3s|.*|@define-color bg-hover ${W_CUSTOM_HOVER_BG};|" \
+  -e "4s|.*|@define-color bg-focus ${W_FOCUS_BG};|" \
+  -e "5s|.*|@define-color bg-active ${W_ACTIVE_BG};|" \
+  -e "6s|.*|@define-color bg-urgent ${W_URGENT_BG};|" \
+  -e "7s|.*|@define-color bg-charging ${W_BATT_CHARGING_BG};|" \
+  -e "8s|.*|@define-color bg-critical ${W_BATT_CRITICAL_BG};|" \
+  -e "9s|.*|@define-color color-default ${W_COLOR};|" \
+  -e "10s|.*|@define-color color-dark ${W_URGENT_COLOR};|" \
+  -e "11s|.*|@define-color color-hover ${W_HOVER};|" \
+  "$WAYBAR_CSS"
+
+# 3) Wlogout
+sed -i \
+    -e "4s|.*|    color: ${WL_COLOR};|" \
+    -e "5s|.*|    background-color: ${WL_BG};|" \
+    -e "13s|.*|    color: ${WL_BTN_COLOR};|" \
+    -e "17s|.*|    background-color: ${WL_BG};|" \
+    -e "23s|.*|    background-color: ${WL_BTN_HOVER_BG};|" \
+    -e "27s|.*|    background-color: ${WL_BTN_FOCUS_BG};|" \
+    "$WLOGOUT_CSS"
+
+# 4) Wofi
+sed -i \
+    -e "6s|.*|    border: ${WO_BORDER};|" \
+    -e "8s|.*|    background-color: ${WO_BG};|" \
+    -e "17s|.*|    color: ${WO_INPUT_COLOR};|" \
+    -e "42s|.*|    border: ${WO_OUTER_BORDER};|" \
+    -e "44s|.*|    background-color: ${WO_OUTER_BG};|" \
+    -e "71s|.*|    color: ${WO_TEXT_UNSEL};|" \
+    "$WOFI_CSS"
+
+# 5) Mako
+sed -i \
+    -e "3s|.*|background-color=${MKO_BG}|" \
+    -e "4s|.*|text-color=${MKO_TEXT}|" \
+    -e "5s|.*|border-color=${MKO_BORDER}|" \
+    -e "6s|.*|progress-color=over ${MKO_PROG}|" \
+    "$MAKO_CONF"
+
+# 6) Micro
+sed -i '2s|.*|    "colorscheme": "cmc-16"|' "$MICRO_SETTINGS"
+
+# 7) Alacritty
+sed -i '331s|.*|  "~\/.config\/alacritty\/themes\/themes\/baitong.toml"|' "$ALACRITTY_CONF"
+
+# 8) SpeedCrunch
+sed -i '5s|.*|Display\\ColorSchemeName=obsidian_night|' "$SPEEDCRUNCH_INI"
+
+# Reload Mako
+makoctl reload
+
+echo "✅ theme applied!"

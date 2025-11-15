@@ -6,6 +6,8 @@
 
 ![pcmanfm-awtarchy-gruvbox](https://github.com/laosmidas/ahtarchy/raw/main/previews/pcmanfm-awtarchy-gruvbox.png)
 
+![pipboy](https://github.com/laosmidas/ahtarchy/raw/main/previews/pipboy.png)
+
 ![screen_gaurd-catppuccin](https://github.com/laosmidas/ahtarchy/raw/main/previews/screen_gaurd-catppuccin.png)
 
 ![wiremix-waybar_bottom](https://github.com/laosmidas/ahtarchy/raw/main/previews/wiremix-waybar_bottom.png)

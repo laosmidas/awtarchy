@@ -2,7 +2,7 @@ Notes From Repo: https://github.com/laosmidas/awtarchy
 
 # install firefox
 ```sh
-sudo pacman -S --noconfirm firefox
+sudo pacman -S firefox
 ```
 
 # install user.js
@@ -74,6 +74,4 @@ disable `Show bookmarks bar`
 
 vertical tabs:
 
-![firefox_virtical_tabs_&_bar](https://raw.githubusercontent.com/laosmidas/arch-hypr-dots/main/browser_notes/firefox_virtical_tabs_&_bar.png)
-
-
+![firefox_vertical_tabs_&_bar](https://raw.githubusercontent.com/laosmidas/arch-hypr-dots/main/browser_notes/firefox_vertical_tabs_&_bar.png)

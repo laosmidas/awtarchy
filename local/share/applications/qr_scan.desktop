@@ -1,10 +1,10 @@
 # github.com/laosmidas/awtarchy/tree/main/local/share/applications
-# ~/.local/share/applications/gif.desktop
+# ~/.local/share/applications/qr_scan.desktop
 
 [Desktop Entry]
 Type=Application
-Name=gif (record)
-Exec=/bin/sh -c "$HOME/.config/hypr/scripts/gif.sh"
+Name=QR (scan code)
+Exec=/bin/sh -c "$HOME/.config/hypr/scripts/qr_scan.sh"
 Icon=utilities-terminal
 Terminal=false
 Categories=Utility;

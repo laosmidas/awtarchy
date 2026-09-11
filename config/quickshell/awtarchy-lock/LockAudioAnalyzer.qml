@@ -9,16 +9,10 @@ Item {
     width: 0
     height: 0
 
-    property real low: 0
-    property real mid: 0
-    property real high: 0
-    property real overall: 0
+    property var bands: []
+    property var targetBands: []
 
-    property real targetLow: 0
-    property real targetMid: 0
-    property real targetHigh: 0
-    property real targetOverall: 0
-
+    readonly property int maximumBands: 64
     readonly property string configHome: Quickshell.env("XDG_CONFIG_HOME")
         || (Quickshell.env("HOME") + "/.config")
     readonly property string helper: root.configHome
@@ -37,34 +31,33 @@ Item {
         return bounded < silenceThreshold ? 0 : bounded;
     }
 
-    function average(values, start, count) {
-        let total = 0;
-        let used = 0;
-        for (let i = start; i < Math.min(values.length, start + count); ++i) {
-            total += values[i];
-            used++;
-        }
-        return used > 0 ? total / used : 0;
+    function zeroSpectrum() {
+        const values = [];
+        for (let i = 0; i < maximumBands; ++i)
+            values.push(0);
+        return values;
     }
 
-    function ensureSmoothing() {
-        if (!smoothingTimer.running)
-            smoothingTimer.start();
+    function normalizedSpectrum(values) {
+        const result = [];
+        for (let i = 0; i < maximumBands; ++i) {
+            const value = i < values.length ? values[i] : 0;
+            result.push(threshold(value));
+        }
+        return result;
     }
 
     function parseFrame(data) {
         const fields = String(data || "").trim().split(";");
-        if (fields.length < 8)
-            return;
-
         const values = [];
-        for (let i = 0; i < 8; ++i)
+        for (let i = 0; i < fields.length && values.length < maximumBands; ++i) {
+            if (fields[i].length === 0)
+                continue;
             values.push(clampUnit(Number(fields[i]) / 1000));
-
-        targetLow = threshold(average(values, 0, 3));
-        targetMid = threshold(average(values, 3, 3));
-        targetHigh = threshold(average(values, 6, 2));
-        targetOverall = threshold(average(values, 0, 8));
+        }
+        if (values.length === 0)
+            return;
+        targetBands = normalizedSpectrum(values);
         ensureSmoothing();
     }
 
@@ -74,11 +67,13 @@ Item {
         return Math.abs(next - target) < 0.001 ? target : next;
     }
 
+    function ensureSmoothing() {
+        if (!smoothingTimer.running)
+            smoothingTimer.start();
+    }
+
     function clearTargets() {
-        targetLow = 0;
-        targetMid = 0;
-        targetHigh = 0;
-        targetOverall = 0;
+        targetBands = zeroSpectrum();
     }
 
     function startAnalyzer() {
@@ -87,10 +82,13 @@ Item {
     }
 
     function settled() {
-        return root.low === root.targetLow
-            && root.mid === root.targetMid
-            && root.high === root.targetHigh
-            && root.overall === root.targetOverall;
+        if (bands.length !== targetBands.length)
+            return false;
+        for (let i = 0; i < targetBands.length; ++i) {
+            if (Math.abs(Number(bands[i] || 0) - Number(targetBands[i] || 0)) >= 0.001)
+                return false;
+        }
+        return true;
     }
 
     onEnabledChanged: {
@@ -104,7 +102,11 @@ Item {
         }
     }
 
-    Component.onCompleted: root.startAnalyzer()
+    Component.onCompleted: {
+        bands = zeroSpectrum();
+        targetBands = zeroSpectrum();
+        root.startAnalyzer();
+    }
 
     Process {
         id: audioProcess
@@ -124,11 +126,13 @@ Item {
         repeat: true
         running: false
         onTriggered: {
-            root.low = root.smoothed(root.low, root.targetLow);
-            root.mid = root.smoothed(root.mid, root.targetMid);
-            root.high = root.smoothed(root.high, root.targetHigh);
-            root.overall = root.smoothed(root.overall, root.targetOverall);
-
+            const next = [];
+            for (let i = 0; i < root.maximumBands; ++i) {
+                const current = i < root.bands.length ? Number(root.bands[i]) : 0;
+                const target = i < root.targetBands.length ? Number(root.targetBands[i]) : 0;
+                next.push(root.smoothed(current, target));
+            }
+            root.bands = next;
             if (root.settled())
                 stop();
         }

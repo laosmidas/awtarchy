@@ -47,6 +47,6 @@ jobs:
           fi
           git config user.name laosmidas
           git config user.email 275431321+laosmidas@users.noreply.github.com
-          git add config/hypr/scripts/quickshell_lockscreen_contrast.sh config/quickshell/awtarchy/LockscreenEditor.qml tests/test-quickshell-lockscreen-element-system.sh
+          git add config/hypr/scripts/quickshell_lockscreen_contrast.sh config/quickshell/awtarchy/LockscreenEditor.qml tests/test-quickshell-lockscreen-element-system.sh tests/test-quickshell-lockscreen-media-editor-polish.sh
           git commit -m 'Support animated lockscreen contrast'
           git push origin HEAD:feature/lockscreen-media-editor-polish
